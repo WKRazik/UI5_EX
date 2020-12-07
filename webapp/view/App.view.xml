@@ -3,9 +3,9 @@
 	<Shell id="shell">
 		<App id="app">
 			<pages>
-				<Page title="Product List" class="sapUiContentPadding">
+				<Page title="{i18n>pageTitle}" class="sapUiContentPadding">
 					<content>
-						<f:GridList id="productList" items="{/Products}" headerText="Products">
+						<f:GridList id="productList" items="{/Products}" headerText="{i18n>listTitle}">
 							<f:customLayout>
 								<grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))" gridGap="1rem"/>
 							</f:customLayout>
@@ -19,9 +19,9 @@
 										<Image width="10rem" height="10rem" src="{ path: 'Name', formatter: 'demo.ui5.ProductListApp.model.formatter.fnIconPicture' }"/>
 										<FlexBox direction="Column" class="sapUiSmallMarginBegin">
 											<ObjectStatus icon="sap-icon://favorite" title="{i18n>ratingLabel}" text="{Rating}/5" state="Warning" class="sapUiMediumMarginTop"/>
-											<Label text="Release date" class="sapUiTinyMarginTop"/>
+											<Label text="{i18n>releaseDateLabel}" class="sapUiTinyMarginTop"/>
 											<Text text="{path: 'ReleaseDate', type: 'sap.ui.model.odata.type.DateTimeOffset', formatOptions: { style: 'medium' } }"/>
-											<Label text="Discontinued date" class="sapUiTinyMarginTop"/>
+											<Label text="{i18n>discontinuedDateLabel}" class="sapUiTinyMarginTop"/>
 											<Text text="{path: 'DiscontinuedDate', type: 'sap.ui.model.odata.type.DateTimeOffset', formatOptions: { relative: true, relativeScale: 'auto' } }"/>
 										</FlexBox>
 									</FlexBox>
@@ -34,7 +34,7 @@
 						<OverflowToolbar>
 							<core:Icon src="sap-icon://lightbulb"/>
 							<ToolbarSeparator/>
-							<Label text="© Copyright 2019 SAP SE."/>
+							<Label text="{i18n>copyright}"/>
 						</OverflowToolbar>
 					</footer>
 				</Page>
